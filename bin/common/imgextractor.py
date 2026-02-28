@@ -114,6 +114,12 @@ class Extractor(object):
             w += 1
         return str(s) + str(o) + str(g) + str(w)
 
+    def __ensure_dir(self, file_path):
+        """确保文件所在的父目录存在，不存在则自动创建"""
+        parent = os.path.dirname(file_path)
+        if parent and not os.path.isdir(parent):
+            os.makedirs(parent, exist_ok=True)
+
     def __ext4extractor(self):
         import ext4
         import string
@@ -162,6 +168,7 @@ class Extractor(object):
                         tmppath = self.DIR + entry_inode_path
                         if (tmppath).find(' ', 1, len(tmppath)) > 0:
                             spaces_file = self.BASE_MYDIR + 'config' + os.sep + self.FileName + '_space.txt'
+                            self.__ensure_dir(spaces_file)  # FIX: 确保目录存在
                             if not os.path.isfile(spaces_file):
                                 f = open(spaces_file, 'tw', encoding='utf-8')
                                 self.__appendf(tmppath, spaces_file)
@@ -179,6 +186,7 @@ class Extractor(object):
                             tmppath = self.DIR + entry_inode_path
                             if (tmppath).find(' ', 1, len(tmppath)) > 0:
                                 spaces_file = self.BASE_MYDIR + 'config' + os.sep + self.FileName + '_space.txt'
+                                self.__ensure_dir(spaces_file)  # FIX: 确保目录存在
                                 if not os.path.isfile(spaces_file):
                                     f = open(spaces_file, 'tw',
                                              encoding='utf-8')
@@ -201,6 +209,7 @@ class Extractor(object):
                                 tmppath = self.DIR + entry_inode_path
                                 if (tmppath).find(' ', 1, len(tmppath)) > 0:
                                     spaces_file = self.BASE_MYDIR + 'config' + os.sep + self.FileName + '_space.txt'
+                                    self.__ensure_dir(spaces_file)  # FIX: 确保目录存在
                                     if not os.path.isfile(spaces_file):
                                         f = open(spaces_file, 'tw',
                                                  encoding='utf-8')
@@ -218,6 +227,7 @@ class Extractor(object):
                                 tmppath = self.DIR + entry_inode_path
                                 if (tmppath).find(' ', 1, len(tmppath)) > 0:
                                     spaces_file = self.BASE_MYDIR + 'config' + os.sep + self.FileName + '_space.txt'
+                                    self.__ensure_dir(spaces_file)  # FIX: 确保目录存在
                                     if not os.path.isfile(spaces_file):
                                         f = open(spaces_file, 'tw',
                                                  encoding='utf-8')
@@ -261,6 +271,7 @@ class Extractor(object):
                         tmppath = self.DIR + entry_inode_path
                         if (tmppath).find(' ', 1, len(tmppath)) > 0:
                             spaces_file = self.BASE_MYDIR + 'config' + os.sep + self.FileName + '_space.txt'
+                            self.__ensure_dir(spaces_file)  # FIX: 确保目录存在
                             if not os.path.isfile(spaces_file):
                                 f = open(spaces_file, 'tw', encoding='utf-8')
                                 self.__appendf(tmppath, spaces_file)
@@ -278,6 +289,7 @@ class Extractor(object):
                             tmppath = self.DIR + entry_inode_path
                             if (tmppath).find(' ', 1, len(tmppath)) > 0:
                                 spaces_file = self.BASE_MYDIR + 'config' + os.sep + self.FileName + '_space.txt'
+                                self.__ensure_dir(spaces_file)  # FIX: 确保目录存在
                                 if not os.path.isfile(spaces_file):
                                     f = open(spaces_file, 'tw',
                                              encoding='utf-8')
@@ -300,6 +312,7 @@ class Extractor(object):
                                 tmppath = self.DIR + entry_inode_path
                                 if (tmppath).find(' ', 1, len(tmppath)) > 0:
                                     spaces_file = self.BASE_MYDIR + 'config' + os.sep + self.FileName + '_space.txt'
+                                    self.__ensure_dir(spaces_file)  # FIX: 确保目录存在
                                     if not os.path.isfile(spaces_file):
                                         f = open(spaces_file, 'tw',
                                                  encoding='utf-8')
@@ -317,6 +330,7 @@ class Extractor(object):
                                 tmppath = self.DIR + entry_inode_path
                                 if (tmppath).find(' ', 1, len(tmppath)) > 0:
                                     spaces_file = self.BASE_MYDIR + 'config' + os.sep + self.FileName + '_space.txt'
+                                    self.__ensure_dir(spaces_file)  # FIX: 确保目录存在
                                     if not os.path.isfile(spaces_file):
                                         f = open(spaces_file, 'tw',
                                                  encoding='utf-8')
@@ -343,6 +357,7 @@ class Extractor(object):
                             tmppath = self.DIR + entry_inode_path
                             if (tmppath).find(' ', 1, len(tmppath)) > 0:
                                 spaces_file = self.BASE_MYDIR + 'config' + os.sep + self.FileName + '_space.txt'
+                                self.__ensure_dir(spaces_file)  # FIX: 确保目录存在
                                 if not os.path.isfile(spaces_file):
                                     f = open(spaces_file, 'tw',
                                              encoding='utf-8')
@@ -361,6 +376,7 @@ class Extractor(object):
                                 tmppath = self.DIR + entry_inode_path
                                 if (tmppath).find(' ', 1, len(tmppath)) > 0:
                                     spaces_file = self.BASE_MYDIR + 'config' + os.sep + self.FileName + '_space.txt'
+                                    self.__ensure_dir(spaces_file)  # FIX: 确保目录存在
                                     if not os.path.isfile(spaces_file):
                                         f = open(spaces_file, 'tw',
                                                  encoding='utf-8')
@@ -383,6 +399,7 @@ class Extractor(object):
                                     tmppath = self.DIR + entry_inode_path
                                     if (tmppath).find(' ', 1, len(tmppath)) > 0:
                                         spaces_file = self.BASE_MYDIR + 'config' + os.sep + self.FileName + '_space.txt'
+                                        self.__ensure_dir(spaces_file)  # FIX: 确保目录存在
                                         if not os.path.isfile(spaces_file):
                                             f = open(spaces_file, 'tw',
                                                      encoding='utf-8')
@@ -402,6 +419,7 @@ class Extractor(object):
                                     tmppath = self.DIR + entry_inode_path
                                     if (tmppath).find(' ', 1, len(tmppath)) > 0:
                                         spaces_file = self.BASE_MYDIR + 'config' + os.sep + self.FileName + '_space.txt'
+                                        self.__ensure_dir(spaces_file)  # FIX: 确保目录存在
                                         if not os.path.isfile(spaces_file):
                                             f = open(spaces_file, 'tw',
                                                      encoding='utf-8')
@@ -465,6 +483,7 @@ class Extractor(object):
                                     tmppath = self.DIR + entry_inode_path
                                     if (tmppath).find(' ', 1, len(tmppath)) > 0:
                                         spaces_file = self.BASE_MYDIR + 'config' + os.sep + self.FileName + '_space.txt'
+                                        self.__ensure_dir(spaces_file)  # FIX: 确保目录存在
                                         if not os.path.isfile(spaces_file):
                                             f = open(spaces_file, 'tw',
                                                      encoding='utf-8')
@@ -485,6 +504,7 @@ class Extractor(object):
                                         tmppath = self.DIR + entry_inode_path
                                         if (tmppath).find(' ', 1, len(tmppath)) > 0:
                                             spaces_file = self.BASE_MYDIR + 'config' + os.sep + self.FileName + '_space.txt'
+                                            self.__ensure_dir(spaces_file)  # FIX: 确保目录存在
                                             if not os.path.isfile(spaces_file):
                                                 f = open(
                                                     spaces_file, 'tw', encoding='utf-8')
@@ -510,6 +530,7 @@ class Extractor(object):
                                             tmppath = self.DIR + entry_inode_path
                                             if (tmppath).find(' ', 1, len(tmppath)) > 0:
                                                 spaces_file = self.BASE_MYDIR + 'config' + os.sep + self.FileName + '_space.txt'
+                                                self.__ensure_dir(spaces_file)  # FIX: 确保目录存在
                                                 if not os.path.isfile(spaces_file):
                                                     f = open(
                                                         spaces_file, 'tw', encoding='utf-8')
@@ -530,6 +551,7 @@ class Extractor(object):
                                             tmppath = self.DIR + entry_inode_path
                                             if (tmppath).find(' ', 1, len(tmppath)) > 0:
                                                 spaces_file = self.BASE_MYDIR + 'config' + os.sep + self.FileName + '_space.txt'
+                                                self.__ensure_dir(spaces_file)  # FIX: 确保目录存在
                                                 if not os.path.isfile(spaces_file):
                                                     f = open(
                                                         spaces_file, 'tw', encoding='utf-8')
@@ -572,19 +594,14 @@ class Extractor(object):
         dir_my = self.CONFING_DIR + os.sep
         if not os.path.isdir(dir_my):
             os.makedirs(dir_my)
-       # f = open(dir_my + self.FileName + '_pack.sh', 'tw', encoding='utf-8')
-       # self.__appendf('make_ext4fs -T -1 -S ./file_contexts -C ./fs_config -l ' +str(os.path.getsize(self.OUTPUT_IMAGE_FILE))+ ' -a /'+self.FileName+' "$outdir"/'+self.FileName+'.new.img '+self.FileName+'', dir_my + self.FileName + '_pack.sh')
-       # f.close()
-       # f = open(dir_my + self.FileName + '_pack_sparse.sh', 'tw', encoding='utf-8')
-       # self.__appendf('make_ext4fs -s -T -1 -S ./file_contexts -C ./fs_config -l ' +str(os.path.getsize(self.OUTPUT_IMAGE_FILE))+ ' -a /'+self.FileName+' "$outdir"/'+self.FileName+'.new.img '+self.FileName+'', dir_my + self.FileName + '_pack_sparse.sh')
-       # f.close()
+        # FIX: 同时确保 BASE_MYDIR\config\ 存在，供 spaces_file 写入使用
+        base_config_dir = self.BASE_MYDIR + 'config'
+        if not os.path.isdir(base_config_dir):
+            os.makedirs(base_config_dir, exist_ok=True)
         f = open(dir_my + self.FileName + '_size.txt', 'tw', encoding='utf-8')
         self.__appendf(os.path.getsize(self.OUTPUT_IMAGE_FILE),
                        dir_my + self.FileName + '_size.txt')
         f.close()
-       # f = open(dir_my + self.FileName + '_name.txt', 'tw', encoding='utf-8')
-       # self.__appendf(os.path.basename(self.OUTPUT_IMAGE_FILE).replace(".img", ""), dir_my + self.FileName + '_name.txt')
-       # f.close()
         with open(self.OUTPUT_IMAGE_FILE, 'rb') as file:
             root = ext4.Volume(file).root
             dirlist = []
